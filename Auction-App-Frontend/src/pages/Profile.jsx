@@ -18,7 +18,7 @@ export const Profile = () => {
           navigate("/signin");
           return;
         }
-        const response = await axios.get("http://localhost:5001/api/profile", {
+        const response = await axios.get("https://auction-app-j7t8.onrender.com/api/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(response.data);
