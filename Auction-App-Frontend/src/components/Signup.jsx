@@ -29,7 +29,7 @@ export const Signup = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5001/api/signup", {
+      const response = await axios.post("https://auction-app-j7t8.onrender.com/api/signup", {
         fullName: formData.fullName,
         email: formData.email,
         phone: formData.phone,
@@ -38,7 +38,7 @@ export const Signup = () => {
       });
 
       // Auto Sign-in After Signup
-      const loginResponse = await axios.post("http://localhost:5001/api/signin", {
+      const loginResponse = await axios.post("https://auction-app-j7t8.onrender.com/api/signin", {
         email: formData.email,
         password: formData.password,
       });
