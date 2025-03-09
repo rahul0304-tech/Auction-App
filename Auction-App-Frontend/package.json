@@ -22,7 +22,7 @@
   "react-toastify": "^11.0.5",
   "swiper": "^11.2.5",
   "tailwind-merge": "^2.2.1",
-  "three": "^0.169.0"  // Downgrade to 0.169.0
+  "three": "^0.169.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
