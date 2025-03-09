@@ -8,7 +8,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
-import STLViewer from "@/components/STLViewer";
 
 // ✅ Function to format file URLs
 const getFileUrl = (filePath) => {
@@ -108,15 +107,6 @@ export const AuctionDetails = () => {
               </SwiperSlide>
             )}
           </Swiper>
-
-          {/* 3D Model Viewer */}
-          {auction.model3D && (
-            <div className="mt-4 w-full h-96 bg-gray-100 flex justify-center items-center rounded-lg overflow-hidden">
-              <div className="w-full h-full">
-                <STLViewer modelUrl={getFileUrl(auction.model3D)} />
-              </div>
-            </div>
-          )}
 
           {/* Description */}
           <div className="mt-8">
