@@ -13,7 +13,7 @@ import STLViewer from "@/components/STLViewer";
 // ✅ Function to format file URLs
 const getFileUrl = (filePath) => {
   if (!filePath) return null;
-  return `http://localhost:5001/${filePath.replace(/\\/g, "/")}`;
+  return `https://auction-app-j7t8.onrender.com/${filePath.replace(/\\/g, "/")}`;
 };
 
 export const AuctionDetails = () => {
@@ -27,13 +27,13 @@ export const AuctionDetails = () => {
   useEffect(() => {
     const fetchAuctionDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5001/api/auctions/${id}`);
+        const response = await axios.get(`https://auction-app-j7t8.onrender.com/api/auctions/${id}`);
         const auctionData = response.data;
         setAuction(auctionData);
 
         // ✅ Fetch seller details only if `seller` exists
         if (auctionData.seller && auctionData.seller._id) {
-          const sellerResponse = await axios.get(`http://localhost:5001/api/users/${auctionData.seller._id}`);
+          const sellerResponse = await axios.get(`https://auction-app-j7t8.onrender.com/api/users/${auctionData.seller._id}`);
           setSeller(sellerResponse.data);
         }
       } catch (err) {
@@ -62,7 +62,7 @@ export const AuctionDetails = () => {
 
       // ✅ Place the bid
       const response = await axios.post(
-        `http://localhost:5001/api/bid/${id}`,
+        `https://auction-app-j7t8.onrender.com/api/bid/${id}`,
         { bid: parseFloat(bidAmount) },
         { headers: { Authorization: `Bearer ${token}` } }
       );
