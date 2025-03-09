@@ -35,7 +35,7 @@ export const MyAuctions = () => {
 
         // Make all requests independently to handle partial failures
         try {
-          const postedRes = await axios.get('http://localhost:5001/api/user/posted-auctions', config);
+          const postedRes = await axios.get('https://auction-app-j7t8.onrender.com/api/user/posted-auctions', config);
           setPostedAuctions(postedRes.data?.postedAuctions || []);
         } catch (err) {
           console.error("Error fetching posted auctions:", err);
@@ -49,7 +49,7 @@ export const MyAuctions = () => {
         }
 
         try {
-          const bidsRes = await axios.get('http://localhost:5001/api/user/participated-auctions', config);
+          const bidsRes = await axios.get('https://auction-app-j7t8.onrender.com/api/user/participated-auctions', config);
           setParticipatedAuctions(bidsRes.data?.participatedAuctions || []);
         } catch (err) {
           console.error("Error fetching participated auctions:", err);
@@ -57,7 +57,7 @@ export const MyAuctions = () => {
         }
 
         try {
-          const wonRes = await axios.get('http://localhost:5001/api/user/won-auctions', config);
+          const wonRes = await axios.get('https://auction-app-j7t8.onrender.com/api/user/won-auctions', config);
           setWonAuctions(wonRes.data?.wonAuctions || []);
         } catch (err) {
           console.error("Error fetching won auctions:", err);
