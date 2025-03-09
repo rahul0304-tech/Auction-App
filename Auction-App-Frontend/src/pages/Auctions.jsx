@@ -19,7 +19,7 @@ export const Auctions = () => {
   useEffect(() => {
     const fetchAuctions = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/auctions");
+        const response = await axios.get("https://auction-app-j7t8.onrender.com/api/auctions");
         setAuctions(response.data);
       } catch (err) {
         setError("Failed to fetch auctions.");
@@ -35,7 +35,7 @@ export const Auctions = () => {
   const getImageUrl = (imagePath) => {
     if (!imagePath) return "placeholder.jpg"; // This line should only return placeholder if imagePath is empty
     const normalizedPath = imagePath.replace(/\\/g, "/");
-    const fullUrl = `http://localhost:5001/${normalizedPath}`;
+    const fullUrl = `https://auction-app-j7t8.onrender.com/${normalizedPath}`;
 
     console.log("🖼️ Image URL:", fullUrl); // Log the full URL
     return fullUrl;
