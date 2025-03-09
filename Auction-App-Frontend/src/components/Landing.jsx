@@ -10,7 +10,7 @@ export const Landing = () => {
   useEffect(() => {
     const fetchAuctions = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/auctions");
+        const response = await axios.get("https://auction-app-j7t8.onrender.com/api/auctions");
         const auctions = response.data;
 
         // Sort by highest bid and select the top 3
@@ -68,7 +68,7 @@ export const Landing = () => {
           {featuredAuctions.map((auction) => (
             <div key={auction._id} className="bg-white rounded-lg shadow-lg overflow-hidden">
               <img
-                src={auction.imageRequired ? `http://localhost:5001/${auction.imageRequired}` : "placeholder.jpg"}
+                src={auction.imageRequired ? `https://auction-app-j7t8.onrender.com/${auction.imageRequired}` : "placeholder.jpg"}
                 alt={auction.itemName}
                 className="w-full h-48 object-contain"
               />
