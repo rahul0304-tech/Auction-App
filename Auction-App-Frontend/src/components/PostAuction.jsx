@@ -63,7 +63,7 @@ export const PostAuction = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5001/api/auction", formDataToSend, {
+      const response = await axios.post("https://auction-app-j7t8.onrender.com/api/auction", formDataToSend, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
@@ -71,7 +71,7 @@ export const PostAuction = () => {
       });
 
       // ✅ Update user's posted auctions
-      await axios.put("http://localhost:5001/api/user/posted-auctions", {
+      await axios.put("https://auction-app-j7t8.onrender.com/api/user/posted-auctions", {
         auctionId: response.data.auction._id,
       }, {
         headers: { Authorization: `Bearer ${token}` },
