@@ -7,7 +7,7 @@ import { Button } from './ui/Button';
 const getImageUrl = (imagePath) => {
   if (!imagePath) return "placeholder.jpg";
   const normalizedPath = imagePath.replace(/\\/g, "/");
-  return `http://localhost:5001/${normalizedPath}`;
+  return `https://auction-app-j7t8.onrender.com/${normalizedPath}`;
 };
 
 export const AuctionItem = ({ auction }) => {
